@@ -1,0 +1,319 @@
+ /* ******************************************** */
+/* Default styles */
+:root {
+    --primary-color: #302AE6;
+    --primary-color-hover: #302ae6b4;
+    --secondary-color: #536390;
+    --secondary-color-hover: #536390a9;
+    --delete-color: #dd7973;
+    --delete-color-hover: #dd5952;
+    --text-color: #424242;
+    --background-color: #fff;
+    --input-bg-color: #161625;
+    --input-text-color: #fff;
+    --heading-color: #292922;
+    --box-shadows: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --primary-color-hover: #9a97f3b4;
+    --secondary-color: #818cab;
+    --secondary-color-hover: #818cabb4;
+    --delete-color: #dd7973;
+    --delete-color-hover: #dd5952;
+    --text-color: #e1e1ff;
+    --background-color: #161625;
+    --input-bg-color: #fff;
+    --input-text-color: #161625;
+    --heading-color: #818cab;
+    --box-shadows: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+
+  /* ******************************************** */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* ******************************************** */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--background-color);
+  }
+
+  /* ******************************************** */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 10px;
+    z-index: 999;
+    box-shadow: var(--box-shadows);
+    text-align: center;
+  }
+
+  /* ******************************************** */
+  /*Simple css to style toggle switch*/
+  .theme-switch-wrapper {
+    /* position: absolute;
+    top: 5px;
+    right: 5px; */
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #161625;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #302AE6;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #f2f2f2;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* ******************************************** */
+  
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--text-color);
+  }
+  
+  h1 p {
+    display: inline;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    /* background-color: var(--heading-color); */
+    color: var(--primary-color);
+  }
+
+  /* ******************************************** */
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .small-text {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 0px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+  }
+  
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--primary-color-hover);
+  }
+
+  /* ******************************************** */
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #hide-completed-button,
+  #delete-all-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #hide-completed-button {
+    background-color: var(--secondary-color);
+    color: #f2f2f2;
+  }
+  
+  #hide-completed-button:hover {
+    background-color: var(--secondary-color-hover);
+  }
+  
+  #delete-all-button {
+    background-color: var(--delete-color);
+    color: #f2f2f2;
+  }
+  
+  #delete-all-button:hover {
+    background-color: var(--delete-color-hover);
+  }
+  
+  /* ******************************************** */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--heading-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+  }
+  
+  li:last-child {
+    border-bottom: none;
+  }
+  
+  li .task-title {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  li .task-title.completed {
+    text-decoration: line-through;
+    color: var(--text-color);
+  }
+  
+  li input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .delete-button {
+    background-color: var(--delete-color);
+  }
+  
+  .delete-button:hover {
+    background-color: var(--delete-color-hover);
+  }
+  
+  /* ******************************************** */
+  .separator {
+    display: block;
+    width: 100%;
+    height: 171px;
+  }
+
+  
+  /* ******************************************** */
+  @media (max-width: 320px) {
+    .separator {
+      height: 270px;
+    }
+  
+    #hide-completed-button,
+    #delete-all-button {
+      border-radius: 0 !important;
+    }
+
+    .theme-switch {
+        display: inline-block;
+        height: 50px;
+        position: relative;
+        width: 60px;
+        vertical-align: middle;
+    }
+
+    .slider.round {
+        border-radius: 0px;
+    }
+
+    .slider.round:before {
+        border-radius: 0;
+    }
+
+    .slider:before {
+        /* background-color: #dd5952; */
+        bottom: 4px;
+        content: "";
+        height: 43px;
+        left: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 26px;
+    }
+  }
+  
+  @media (min-width: 321px) and (max-width: 375px) {
+    .separator {
+      height: 255px;
+    }
+  }
+  
+  @media (min-width: 376px) and (max-width: 425px) {
+    .separator {
+      height: 255px;
+    }
+  }
+  
+  @media (min-width: 426px) and (max-width: 768px) {
+    .separator {
+      height: 213px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .separator {
+      height: 171px;
+    }
+  }
+
+
+
+  

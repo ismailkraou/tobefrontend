@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/checklist.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>to be a front-end developer</title>
+</head>
+<body>
+    <header>
+        <h1>you are at <p id="progress-counter">0%</p> to be a front-end developer</h1>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Add a task..." required>
+            <button type="submit">Add</button>
+        </form>
+        <p class="small-text">add more skills if you see that this is not enough</p>
+        <div class="button-container">
+            <button id="hide-completed-button">Hide/show Completed Tasks</button>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <button id="delete-all-button">Delete All Tasks</button>
+        </div>
+        <!-- <div>
+            <button id="delete-all-button">Delete All Tasks</button>
+        </div> -->
+    </header>
+    <div class="separator"></div>
+      
+  <ul id="task-list"></ul>
+
+  <!-- scripts here -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
