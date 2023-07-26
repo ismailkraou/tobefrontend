@@ -1,0 +1,51 @@
+ /* ******************************************** */
+  /*Simple css to style toggle switch*/
+
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: red;
+    cursor: pointer;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    left: 1px;
+    bottom: 1px;
+    background-color: green;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #f2f2f2;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+  
+  .slider.round {
+    border-radius: 16px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

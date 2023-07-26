@@ -1,0 +1,22 @@
+{
+    "name": "to be a front-end developer",
+    "short_name": "To-Do App",
+    "description": "A simple to-do list app to be a front-end developer",
+    "icons": [
+      {
+        "src": "/checklist.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/checklist.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff"
+  }
+  
